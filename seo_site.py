@@ -28,8 +28,8 @@ def build():
     for a, b in [(f"{LOGOS}/option-b-icon.svg", "favicon.svg"), (f"{ROOT}/img/brand/option-b-icon-32.png", "favicon-32.png"), (f"{ROOT}/img/brand/option-b-icon-180.png", "apple-touch-icon.png")]:
         shutil.copy(a, f"{ROOT}/img/brand/{b}")
     site = seo.Site(ROOT, "AI for the Task", "aiforthetask.com", "free-ai-tools-prototype", INDEXABLE, "Oct 13, 2026", "2026-10-13",
-        "Sample data prototype by Atulit. Tools and numbers are made up. Some links are affiliate links marked sponsored.",
+        "Prototype by Atulit. Free tier facts from official pricing pages, checked Oct 13, 2026. No affiliate links yet.",
         f"{LOGOS}/option-b-wordmark-1200.png", "img/brand/option-b-icon-512.png",
-        ["Free tier limits checked by hand.", "Sample data prototype.", "Updated Oct 2026.", "From AI for the Task.", "No ratings, just limits.", "Tested free plans."], hook)
+        ["Free tiers from official pricing pages.", "Source linked.", "Updated Oct 2026.", "From AI for the Task.", "No ratings, just limits.", "Checked Oct 13, 2026."], hook)
     return seo.run(site)
 if __name__ == "__main__": build()
