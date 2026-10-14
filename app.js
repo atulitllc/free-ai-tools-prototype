@@ -1,0 +1,2 @@
+var f=document.getElementById('nl');if(f)f.addEventListener('submit',function(e){e.preventDefault();f.style.display='none';document.getElementById('nlok').style.display='block'});
+document.querySelectorAll('.sort a').forEach(function(a){if(location.search&&location.search.indexOf(a.getAttribute('href').slice(1))>-1){document.querySelectorAll('.sort a').forEach(function(b){b.classList.remove('on')});a.classList.add('on')}});
