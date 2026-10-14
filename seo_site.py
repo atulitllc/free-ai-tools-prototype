@@ -14,7 +14,7 @@ def hook(ctx):
         task = [a["href"] for a in s.select("a.pill") if "task/" in a.get("href", "")]
         tk = task[0].split("task/")[1].strip("/") if task else ""
         sib = [q for q in paths if q.startswith("tools/") and q != p and f'task/{tk}/' in str(ctx["soups"][q].select("a.pill"))]
-        rel = [f"task/{tk}/"] + sib[:5] + (["compare/resumerocket-vs-cvsmith/", "alternatives/resumerocket/"] if tk == "resumes" else [])
+        rel = [f"task/{tk}/"] + sib[:5] + [q for q in (["compare/resumerocket-vs-cvsmith/", "alternatives/resumerocket/"] if tk == "resumes" else []) if q in paths]
         name = h1.split(":")[0]
         return dict(titles=[h1, f"{name}: Free Plan, Limits & Uses", f"{name}: Free Plan & Limits"], related=rel)
     if seg[0] == "task":
