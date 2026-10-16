@@ -9,6 +9,7 @@ def hook(ctx):
     p, s, paths = ctx["path"], ctx["soup"], ctx["paths"]
     seg = p.strip("/").split("/") if p else []
     h1 = ctx["h1"]
+    if p == "contact/": return dict(titles=[h1], index=False)  # thin: no contact inbox yet
     if p == "": return dict(titles=["Best Free AI Tools by Task, Tested Limits"])
     if seg[0] == "tools":
         task = [a["href"] for a in s.select("a.pill") if "task/" in a.get("href", "")]
